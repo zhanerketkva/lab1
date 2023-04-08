@@ -10,6 +10,10 @@ public class Main{
             arr[i]=scanner.nextInt();
         }
         int min=findMinFromArr(arr,n);
+        System.out.println(min);
+        float avr=findAverage(n,arr);
+        System.out.println(avr);
+
     }
     public static int findMinFromArr(int[]arr,int n){
         if(n==1)
@@ -21,5 +25,15 @@ public class Main{
         }
     }
 
+    public static float findSum(int n, int[]arr) {
+        int a = arr[n - 1];
+        if (n == 1) return a;
+        return a + findSum(n - 1, arr);
+    }
+    public static float findAverage(int n, int[] arr) {
+        float avr = findSum(Integer.valueOf(n), arr);
+        return avr / n;
+    }
 }
+
 
