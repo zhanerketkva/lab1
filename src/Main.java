@@ -25,6 +25,8 @@ public class Main{
         System.out.println(fib);
         int pow=findPower(a,n);
         System.out.println(pow);
+        int bin=findBinomCoeff(a,n);
+        System.out.println(bin);
 
 
     }
@@ -88,9 +90,20 @@ public class Main{
         }
         return pow;
     }
-
-
+    public static int findBinomCoeff(int a, int n) {
+        if (n == 0 || n == a) {
+        return 1;
+        }
+        else {
+        int binomial = findBinomCoeff(a - 1, n - 1) + findBinomCoeff(a - 1, n);
+        return binomial;
     }
+    }
+
+}
+
+
+
 
 
 
