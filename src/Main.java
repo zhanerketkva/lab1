@@ -13,8 +13,10 @@ public class Main{
         System.out.println(min);
         float avr=findAverage(n,arr);
         System.out.println(avr);
-        int factorial=n*factorial(n);
+        int factorial=n*factorial(n-1);
         System.out.println(factorial);
+        int fib=fib(n-1)+fib(n-2);
+        System.out.println(fib);
 
     }
     public static int findMinFromArr(int[]arr,int n){
@@ -43,8 +45,14 @@ public class Main{
             return n*factorial(n-1);
         }
     }
-
+    public static int fib(int n) {
+        return switch(n){
+            case 0->0;
+            case 1->1;
+            default-> fib(n-1)+fib(n-2);
+        };
     }
+}
 
 
 
