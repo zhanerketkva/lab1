@@ -36,6 +36,8 @@ public class Main{
         }
         int bin=findBinomCoeff(a,n);
         System.out.println(bin);
+        int findGCD=findGCD(a,n);
+        System.out.println(findGCD);
 
 
     }
@@ -163,6 +165,14 @@ public class Main{
      n=the number of elements to choose
      return=the binomial coefficient of (a choose n)
      */
+    public static int findGCD(int a, int n){
+        if (n==0){
+        return a;    }
+    else{
+        int gcd= findGCD(n, a%n);
+        return gcd;
+    }
+    }
 
 }
 
