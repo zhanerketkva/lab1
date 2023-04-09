@@ -25,6 +25,15 @@ public class Main{
         System.out.println(fib);
         int pow=findPower(a,n);
         System.out.println(pow);
+        Scanner sca = new Scanner(System.in);
+        System.out.print("\n"+"Enter a string to check is all consists of digits: ");
+        String s = sca.nextLine();
+        boolean checkIsDigit=checkIsDigit(s);
+        if (checkIsDigit){
+            System.out.println(("yes"));}
+        else {
+            System.out.println(("no"));
+        }
         int bin=findBinomCoeff(a,n);
         System.out.println(bin);
 
@@ -58,13 +67,13 @@ public class Main{
             System.out.println("2 is a Prime number");
         else {
             for (int divisor = 2; divisor <= (n / 2); divisor++) {
-            if ((n % divisor) == 0) {
-                isprime=false;
-                break;
+                if ((n % divisor) == 0) {
+                    isprime=false;
+                    break;
+                }
             }
-        }
             if (isprime)
-            System.out.printf("Prime", n);
+                System.out.printf("Prime", n);
             else System.out.printf("Composite", n);
         }
         return isprime;}
@@ -89,6 +98,14 @@ public class Main{
             pow *= a ;
         }
         return pow;
+    }
+    public static boolean checkIsDigit(String s){
+        for(int i=0; i<s.length(); i++){
+        if(Character.isDigit(s.charAt(i))){
+            return false;
+        }
+        }
+        return true;
     }
     public static int findBinomCoeff(int a, int n) {
         if (n == 0 || n == a) {
