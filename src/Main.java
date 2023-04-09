@@ -173,6 +173,12 @@ public class Main{
         return gcd;
     }
     }
+    /**
+     This method calculates the greatest common divisor (GCD) of two given integers "a" and "n"
+     a=the first integer
+     n=the second integer
+     return the GCD of "a" and "n"
+     */
 
 }
 
