@@ -17,12 +17,15 @@ public class Main{
         System.out.println(min);
         float avr=findAverage(n,arr);
         System.out.println(avr);
+        boolean prime = checkPrime(n);
+        System.out.println(prime);
         int factorial=findFactorial(n);
         System.out.println(factorial);
         int fib=findFibonacci(n);
         System.out.println(fib);
         int pow=findPower(a,n);
         System.out.println(pow);
+
 
     }
     public static int findMinFromArr(int[]arr,int n){
@@ -44,6 +47,25 @@ public class Main{
         float avr = findSum(Integer.valueOf(n), arr);
         return avr / n;
     }
+
+    public static boolean checkPrime(int n) {
+        boolean isprime=true;
+        if (n < 2)
+            System.out.println("Number needs to be more than 1");
+        else if (n == 2)
+            System.out.println("2 is a Prime number");
+        else {
+            for (int divisor = 2; divisor <= (n / 2); divisor++) {
+            if ((n % divisor) == 0) {
+                isprime=false;
+                break;
+            }
+        }
+            if (isprime)
+            System.out.printf("Prime", n);
+            else System.out.printf("Composite", n);
+        }
+        return isprime;}
     public static int findFactorial(int n){
         if(n==1){
             return 1;
@@ -66,7 +88,17 @@ public class Main{
         }
         return pow;
     }
-}
+
+
+    }
+
+
+
+
+
+
+
+
 
 
 
